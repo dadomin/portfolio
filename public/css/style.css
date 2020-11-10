@@ -1,0 +1,501 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*font-family: 'Noto Sans KR', sans-serif;*/
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+::selection {
+	color: #fff;
+	background: #1fde82;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.size {
+	width: 1200px;
+	height: 100%;
+	position: relative;
+	display: block;
+	margin: 0 auto;;
+}
+/* 헤더설정 */
+header {
+	width: 100%;
+	height: 70px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.08);
+	z-index: 900;
+	background-color: #fff;
+}
+
+header > .size {
+	position: relative;
+}
+header > .size > a{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+header > .size > a > img {
+	height: 45px;
+	margin-right: 7px;
+}
+.right-menu {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+#main-menu {
+	float: left;
+	margin-right: 20px;
+}
+#main-menu > li {
+	float: left;
+	height: 28px;
+	margin: 0 16px;
+	color: #5d6678;
+	font-size: 16px;
+	cursor: pointer;
+	font-weight: 100;
+	position: relative;
+	overflow: hidden;
+}
+#main-menu > li > span {
+	width: 100%;
+	height: 1px;
+	background-color: #5d6678;
+	position: absolute;
+	bottom: 0;
+	left: -100%;
+}
+#main-menu > li:hover > span {
+	animation-duration: 0.5s;
+	animation-name: menu-slide;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.login { 
+	width: 120px;
+	height: 40px;
+	color: #5d6678;
+	background-color: transparent;
+	border: 1px solid #dcdfe5;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 900;
+	cursor: pointer;
+	transition: 0.25s;
+}
+.rigth-menu > .login {
+	float: left;
+}
+.login:hover {
+	background-color: #1fde82;
+	border-color: #1fde82;
+	color: #fff;
+}
+
+@keyframes menu-slide {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 0;
+	}
+}
+
+/* 홈헤더 */
+#header {
+	width: 100%;
+	height: 50px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.08);
+	z-index: 20000;
+}
+#header > .size > a {
+	height: 100%;
+	float: left;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: 18px;
+	margin-right: 20px;
+}
+#header > .size > a > img {
+	height: 30px;
+	margin-right: 6px;
+}
+.search-box {
+	float: left;
+	width: 280px;
+	height: 28px;
+	background-color: rgba(0,0,0,.03);
+	border: 1px solid rgba(0,0,0,.05);
+	border-radius: 28px;
+	margin-top: 12px;
+	display: flex;
+	padding: 0 10px;
+}
+.search-box > input {
+	width: 230px;
+	background: none;
+	border: none;
+	outline: none;
+	color: #333;
+}
+.search-box > button {
+	width: 30px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #999;
+	font-size: 15px;
+}
+#header-menu {
+	float: right;
+	height: 100%;
+}
+#header-menu > div {
+	float: left;
+	height: 100%;
+	margin: 0 12px;
+	padding: 10px 0;
+	text-align: center;
+	line-height: 30px;
+}
+#header-menu > div > a {
+	width: 100%;
+	height: 100%;
+	display: block;
+	padding: 0 12px;
+	border: 1px solid;
+	border-color: rgba(255, 255, 255, 0);
+	color: #989898;
+	font-size: 14px;
+}
+#header-menu > div > a:hover {
+	background-color: rgba(0,0,0,.03);
+	border-color: rgba(0,0,0,.05);
+}
+#header-menu > div > i {
+	cursor: pointer;
+	font-size: 20px;
+	margin-top: 6px;
+	color: #989898;
+}
+#header-menu > div > i:hover {
+	color: #5d6678;
+}
+.profile-menu-top {
+	/* width: 30px; */
+	position: relative;
+}
+.profile-menu-top > img {
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	border: 1px solid rgba(0,0,0,.05);
+	border-radius: 50%;
+}
+#profile-menu {
+	width: auto;
+	min-width: 115px;
+	height: auto;
+	padding: 9px 0;
+	background-color: #fff;
+	border: 1px solid #000;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	display: none;
+}
+.db {
+	display: block !important;
+}
+#profile-menu > li {
+	height: 30px;
+	text-align: left;
+}
+#profile-menu > li > a {
+	padding-left: 15px;
+	padding-right: 40px;
+	width: 100%;
+	height: 100%;
+	display: block;
+	font-size: 13px;
+	color: #333;
+	line-height: 30px;
+}
+#profile-menu > li > a:hover {
+	background-color: #f8f8f8;
+}
+
+/* 푸터 설정 */
+footer {
+    width: 100%;
+    height: 480px;
+    background-color: #fff;
+}
+.footer-upper {
+    width: 100%;
+    height: 430px;
+    display: flex;
+    flex-direction: row;
+    padding: 60px 0;
+}
+.footer-upper > .footer-div {
+    flex: 1;
+}
+.footer-div > a {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.footer-div > a > img {
+    height: 50px;
+    margin-right: 7px;
+}
+.footer-div > p {
+    color: #5d6678;
+    font-size: 14px;
+    margin-bottom: 20px;
+    transition: .25s;
+	cursor: pointer;
+	display: block;
+	width: 100%;
+}
+.footer-div > p > .green {
+    color: #1fde82;
+    font-weight: bold;
+    cursor: text;
+}
+.footer-div > p:hover {
+    color: #1fde82;
+}
+.footer-div > h3 {
+    font-size: 22px;
+    color: #5d6678;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.footer-div > span {
+    color: #5d6678;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.footer-btns {
+    margin-top: 30px;
+}
+.footer-btn {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border: 1px solid #adb6c7;
+    color: #adb6c7;
+    transition: .25s;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    margin-right: 5px;
+}
+.footer-btn:hover {
+    color: #fff;
+    border-color: #1fde82;
+    background-color: #1fde82;
+}
+.footer-under {
+    width: 100%;
+    height: 50px;
+}
+.footer-under > span {
+    float: left;
+    font-size: 12px;
+    color: #5d6678;
+}
+.footer-under > ul {
+    float: right;
+}
+.footer-under > ul > li  {
+    float: left;
+    margin-left: 30px;
+}
+.footer-under > ul > li > a {
+    font-size: 12px;
+    color: #5d6678;
+    transition: .25s;
+}
+.footer-under > ul > li > a:hover {
+    color: #1fde82;
+}
+
+/* 위로 올리가기 버튼 */
+.go-up {
+	width: 46px;
+	height: 46px;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	cursor: pointer;
+	background-color: #1fde82;	
+	z-index: 1000;
+	color: #fff;
+	font-size: 20px;
+	border: none; 
+	border-radius: 4px;
+	outline: none;
+}
+
+/* 팝업창 */
+#pop-up {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 30000;
+}
+.pop-up-bg {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: .8;
+	position: absolute;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+.up {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+}
+/* 팝업 - 프로필 수정 */
+.up.change-up {
+	width: 380px;
+	height: 340px;
+	text-align: center;
+	padding: 20px;
+}
+.change-up > img {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 1px solid rgba(0,0,0,.05);
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	transform: translate(-50%);
+}
+.change-profile-img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #b3b3b3;
+	color: #fff;
+	display: block;
+	line-height: 40px;
+	text-align: center;
+	font-size: 21px;
+	cursor: pointer;
+	position: absolute;
+	top: 160px;
+	left: 220px;
+}
+#change-file {
+	display: none;
+}
+.change-profile-name {
+	position: absolute;
+	left: 50%;
+	bottom: 80px;
+	transform: translateX(-50%);
+	height: 36px;
+	width: 80%;
+	padding: 0 16px;
+}
+.change-up > button {
+	background-color: #474e60;
+	border-radius: 4px;
+	width: 110px;
+	height: 40px;
+	border:none;
+	cursor: pointer;
+	color: #fff;
+	position: absolute;
+	left: 50%;
+	bottom: 25px;
+	transform: translateX(-50%);
+}
+.change-up > button:hover {
+	background-color: #383e4c;
+}
+/* 팝업 - 생일,성별 수정 */
+.up.birth-sex-change {
+	width: 350px;
+	height: 240px;
+	text-align: center;
+	padding: 50px;
+}
+.up.birth-sex-change > input,
+.up.birth-sex-change > select {
+	width: 100%;
+	height: 36px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	padding: 8px 16px;
+}
+.up.birth-sex-change > button {
+	background-color: #474e60;
+	border-radius: 4px;
+	width: 110px;
+	height: 40px;
+	border:none;
+	cursor: pointer;
+	color: #fff;
+}
+.up.birth-sex-change > button:hover {
+	background-color: #383e4c;
+}

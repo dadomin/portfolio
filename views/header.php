@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="stylesheet" href="/css/home.css">
 	<link rel="stylesheet" href="/css/profile.css">
+	<link rel="stylesheet" href="/css/paint.css">
 	<script src="/js/jquery-3.3.1.js"></script>
 	<script src="/js/script.js"></script>
 	<title>김다민 포트폴리오</title>
